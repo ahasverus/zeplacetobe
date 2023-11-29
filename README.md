@@ -6,8 +6,6 @@
 <!-- badges: end -->
 
 
-## Table of contents
-
 
 ## Table of contents
 
@@ -22,5 +20,8 @@
 
 ## Data description
 
-...
+### Administrative borders
+
+- Borders of Mainland France come from the [GADM](https://gadm.org) database
+- Borders of French municipalities come from [OpenStreetMap](https://www.data.gouv.fr/fr/datasets/decoupage-administratif-communal-francais-issu-d-openstreetmap/) database
 
