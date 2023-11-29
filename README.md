@@ -12,10 +12,26 @@
 <p align="left">
 • <a href="#overview">Overview</a><br>
 • <a href="#installation">Installation</a><br>
+• <a href="#usage">Usage</a><br>
 • <a href="#data-description">Data description</a><br>
 • <a href="#citation">Citation</a><br>
 • <a href="#contributing">Contributing</a>
 </p>
+
+
+## Overview
+
+_ADD DESCRIPTION_
+
+
+## Installation
+
+_ADD DESCRIPTION_
+
+
+## Usage
+
+_ADD DESCRIPTION_
 
 
 ## Data description
@@ -25,3 +41,19 @@
 - Borders of Mainland France come from the [GADM](https://gadm.org) database
 - Borders of French municipalities come from [OpenStreetMap](https://www.data.gouv.fr/fr/datasets/decoupage-administratif-communal-francais-issu-d-openstreetmap/) database
 
+
+## Citation
+
+_ADD DESCRIPTION_
+
+
+## Contributing
+
+All types of contributions are encouraged and valued. For more
+information, check out our [Contributor
+Guidelines](https://github.com/ahasverus/zeplacetobe/blob/main/CONTRIBUTING.md).
+
+Please note that the `zeplacetobe` project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/1/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
