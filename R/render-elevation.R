@@ -20,7 +20,7 @@ render_elevation <- function(data) {
   
   html <- c(html, paste0("<span class='source'>Source : <a href='", 
                          "https://csidotinfo.wordpress.com/data/srtm-90m-digital-elevation-database-v4-1/", 
-                         "'>SRTM 90m DEM v4.1</a></span>"))
+                         "'>SRTM 90m DEM</a></span>"))
   
   HTML(paste0(html, collapse = ""))
 }

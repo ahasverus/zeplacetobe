@@ -19,33 +19,33 @@ render_future_climate <- function(data) {
     
     data[10] <- paste0(data[10], " <i>(", 
                        ifelse(deltas[1] < 0, 
-                              gsub("-", "- ", deltas[1]), 
-                              paste0("+ ", deltas[1])), 
+                              gsub("-", "-", deltas[1]), 
+                              paste0("+", deltas[1])), 
                        "&deg;C)</i>")
     data[11] <- paste0(data[11], " <i>(", 
                        ifelse(deltas[2] < 0, 
-                              gsub("-", "- ", deltas[2]), 
-                              paste0("+ ", deltas[2])), 
+                              gsub("-", "-", deltas[2]), 
+                              paste0("+", deltas[2])), 
                        " mm)</i>")
     data[12] <- paste0(data[12], " <i>(", 
                        ifelse(deltas[3] < 0, 
-                              gsub("-", "- ", deltas[3]), 
-                              paste0("+ ", deltas[3])), 
+                              gsub("-", "-", deltas[3]), 
+                              paste0("+", deltas[3])), 
                        " mm)</i>")
     data[13] <- paste0(data[13], " <i>(", 
                        ifelse(deltas[4] < 0, 
-                              gsub("-", "- ", deltas[4]), 
-                              paste0("+ ", deltas[4])), 
+                              gsub("-", "-", deltas[4]), 
+                              paste0("+", deltas[4])), 
                        " mm)</i>")
     data[14] <- paste0(data[14], " <i>(", 
                        ifelse(deltas[5] < 0, 
-                              gsub("-", "- ", deltas[5]), 
-                              paste0("+ ", deltas[5])), 
+                              gsub("-", "-", deltas[5]), 
+                              paste0("+", deltas[5])), 
                        "&deg;C)</i>")
     data[15] <- paste0(data[15], " <i>(", 
                        ifelse(deltas[6] < 0, 
-                              gsub("-", "- ", deltas[6]), 
-                              paste0("+ ", deltas[6])), 
+                              gsub("-", "-", deltas[6]), 
+                              paste0("+", deltas[6])), 
                        "&deg;C)</i>")
   }
   
@@ -73,7 +73,7 @@ render_future_climate <- function(data) {
   
   html <- c(html, paste0("<span class='source'>Source : <a href='", 
                          "https://chelsa-climate.org/", 
-                         "'>Chelsa Database (IPSL-CM6A-LR)</a></span>"))
+                         "'>GFDL-ESM4 SSP585</a></span>"))
   
   HTML(paste0(html, collapse = ""))
 }

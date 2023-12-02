@@ -6,10 +6,10 @@ get_future_climate_layers <- function(path) {
   
   
   url <- paste0("https://os.zhdk.cloud.switch.ch/envicloud/chelsa/chelsa_V2/", 
-                "GLOBAL/climatologies/2041-2070/IPSL-CM6A-LR/ssp585/bio/")
+                "GLOBAL/climatologies/2041-2070/GFDL-ESM4/ssp585/bio/")
   
   filenames <- paste0("CHELSA_", chelsa_layers(), 
-                      "_2041-2070_ipsl-cm6a-lr_ssp585_V.2.1.tif")
+                      "_2041-2070_gfdl-esm4_ssp585_V.2.1.tif")
   
   need_to_crop <- FALSE
   

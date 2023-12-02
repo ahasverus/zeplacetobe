@@ -47,8 +47,8 @@ scrap_wikipedia <- function(layer) {
                          infos[1, 2], "</p>"))
   html <- c(html, paste0("<p class='wiki-label'>", infos[2, 1], " : ", 
                          infos[2, 2], "</p>"))
-  # html <- c(html, paste0("<p class='wiki-label'>", infos[3, 1], " : ", 
-  #                        infos[3, 2], "</p>"))
+  html <- c(html, paste0("<p class='wiki-label'>", "Commune", " : ",
+                         as.character(sf::st_drop_geometry(layer[1, "nom"])), "</p>"))
   
   html <- c(html, paste0("<br />"))
   

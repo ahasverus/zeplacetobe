@@ -36,3 +36,9 @@ code {
   margin: 0;
   padding: 0;
 }
+
+div.github p {
+  margin-top: 2.5em;
+  font-size: 0.9em;
+  text-align: right;
+}

@@ -16,7 +16,18 @@ ui <- fluidPage(
     includeCSS("css/style.css")
   ),
   
-  titlePanel("Ze Place to Be"),
+  # titlePanel("Ze Place to Be"),
+  
+  fluidRow(
+    column(6,
+           tags$h2("Ze Place to Be")
+    ),
+    column(6,
+           tags$div(class = 'github', 
+                    tags$p(tags$a(href = 'https://github.com/ahasverus/zeplacetobe', 
+                                  icon("github"))))
+    )
+  ),
   
   fluidRow(
     
