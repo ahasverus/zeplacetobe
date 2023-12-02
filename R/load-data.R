@@ -23,5 +23,16 @@ load_data <- function(path = here::here("data")) {
   data_list$"current_climate" <- terra::rast(current_climate)
   names(data_list$"current_climate") <- current_climate_names
   
+  future_climate <- list.files(file.path(path, "future-climate"), 
+                               full.names = TRUE)
+  
+  future_climate_names <- basename(future_climate)
+  future_climate_names <- strsplit(future_climate_names, "_")
+  future_climate_names <- unlist(lapply(future_climate_names, 
+                                        function(x) x[2]))
+  
+  data_list$"future_climate" <- terra::rast(future_climate)
+  names(data_list$"future_climate") <- future_climate_names
+  
   data_list
 }

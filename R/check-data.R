@@ -29,4 +29,9 @@ check_data <- function() {
   ## Download current climate layers ----
   
   get_current_climate_layers(path_data)
+  
+  
+  ## Download future climate layers ----
+  
+  get_future_climate_layers(path_data)
 }

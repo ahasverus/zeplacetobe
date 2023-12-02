@@ -101,6 +101,10 @@ server <- function(input, output, session) {
   output$current_climate <- renderText({
     render_current_climate(values())
   })
+  
+  output$future_climate <- renderText({
+    render_future_climate(values())
+  })
 }
 
 shinyApp(ui, server)

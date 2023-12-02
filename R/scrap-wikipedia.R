@@ -42,7 +42,7 @@ scrap_wikipedia <- function(layer) {
   
   html <- NULL
   
-  html <- c(html, paste0("<p class='wiki-section'>Administration</p>"))
+  html <- c(html, paste0("<p class='wiki-section'>&#10148; Administration</p>"))
   html <- c(html, paste0("<p class='wiki-label'>", infos[1, 1], " : ", 
                          infos[1, 2], "</p>"))
   html <- c(html, paste0("<p class='wiki-label'>", infos[2, 1], " : ", 
@@ -52,7 +52,7 @@ scrap_wikipedia <- function(layer) {
   
   html <- c(html, paste0("<br />"))
   
-  html <- c(html, paste0("<p class='wiki-section'>Démographie</p>"))
+  html <- c(html, paste0("<p class='wiki-section'>&#10148; Démographie</p>"))
   html <- c(html, paste0("<p class='wiki-label'>", infos[4, 1], " : ", 
                          infos[4, 2], "</p>"))
   html <- c(html, paste0("<p class='wiki-label'>", infos[5, 1], " : ", 
@@ -60,7 +60,7 @@ scrap_wikipedia <- function(layer) {
   
   html <- c(html, paste0("<br />"))
   
-  html <- c(html, paste0("<p class='wiki-section'>Géographie</p>"))
+  html <- c(html, paste0("<p class='wiki-section'>&#10148; Géographie</p>"))
   html <- c(html, paste0("<p class='wiki-label'>", infos[6, 1], " : ", 
                          infos[6, 2], "</p>"))
   

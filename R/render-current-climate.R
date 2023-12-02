@@ -10,7 +10,7 @@ render_current_climate <- function(data) {
   
   html <- NULL
   
-  html <- c(html, paste0("<p class='wiki-section'>Températures moyennes (1981-2010)</p>"))
+  html <- c(html, paste0("<p class='wiki-section'>&#10148; Températures moyennes (1981-2010)</p>"))
   html <- c(html, paste0("<p class='wiki-label'>Annuelle : ", 
                          data[4], "</p>"))
   html <- c(html, paste0("<p class='wiki-label'>Mois le plus froid : ", 
@@ -20,7 +20,7 @@ render_current_climate <- function(data) {
   
   html <- c(html, paste0("<br />"))
   
-  html <- c(html, paste0("<p class='wiki-section'>Précipitations totales (1981-2010)</p>"))
+  html <- c(html, paste0("<p class='wiki-section'>&#10148; Précipitations totales (1981-2010)</p>"))
   html <- c(html, paste0("<p class='wiki-label'>Annuelle : ", 
                          data[5], "</p>"))
   html <- c(html, paste0("<p class='wiki-label'>Mois le plus sec : ", 

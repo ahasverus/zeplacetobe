@@ -8,7 +8,7 @@ render_elevation <- function(data) {
 
   html <- NULL
   
-  html <- c(html, paste0("<p class='wiki-section'>Altitudes</p>"))
+  html <- c(html, paste0("<p class='wiki-section'>&#10148; Altitudes</p>"))
   html <- c(html, paste0("<p class='wiki-label'>Moyenne : ", 
                          data[1], "</p>"))
   html <- c(html, paste0("<p class='wiki-label'>Maximum : ", 
