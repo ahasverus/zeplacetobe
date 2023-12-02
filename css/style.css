@@ -1,0 +1,38 @@
+html,
+body {
+  width:     100%;
+  height:    100%;
+  margin:    0;
+  padding:   0;
+  font-size: 14px;
+  background-image: url("dust_scratches.png");
+	background-repeat: repeat;
+}
+
+/*
+.well {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+*/
+
+code {
+  color: black;
+}
+
+.source {
+  font-size: 0.9em;
+}
+
+.wiki-section {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.wiki-label {
+  text-indent: 10px;
+  margin: 0;
+  padding: 0;
+}
