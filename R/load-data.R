@@ -6,9 +6,9 @@ load_data <- function(path = here::here("data")) {
                                                       "gadm41_FRA.gpkg"), 
                                     layer = "ADM_ADM_0")
   
-  data_list$"cities" <- sf::st_read(dsn   = file.path(path, "administrative", 
-                                                      "communes-20220101.gpkg"))
-  
+  data_list$"cities" <- readRDS(file.path(path, "administrative",
+                                          "list_of_cities.rds"))
+
   data_list$"elevation" <- terra::rast(file.path(path, "elevation", 
                                                  "FRA_elv_msk.tif"))
   

@@ -25,7 +25,7 @@ get_administrative_layers <- function(path) {
   filename <- "communes-20220101.gpkg"
   zipname  <- "communes-20220101-shp.zip"
   
-  if (!file.exists(file.path(path, "administrative", filename))) {
+  if (!file.exists(file.path(path, "administrative", "list_of_cities.rds"))) {
     
     utils::download.file(url      = paste0(osm_url, zipname),
                          destfile = file.path(path, "administrative", zipname),
@@ -45,6 +45,22 @@ get_administrative_layers <- function(path) {
     invisible(lapply(files_to_dl, function(x) invisible(file.remove(x))))
     invisible(unlink(file.path(path, "administrative", "tmp"), force = TRUE, 
                      recursive = TRUE))
+    
+    for (i in 1:nrow(cities)) {
+      saveRDS(cities[i, ], 
+              file = file.path(path, "administrative", 
+                               paste0("commune-",
+                                      as.character(sf::st_drop_geometry(
+                                        cities[i, "insee"])), 
+                                      ".rds")))
+    }
+    
+    cities <- as.data.frame(sf::st_drop_geometry(cities))
+    
+    saveRDS(cities, file = file.path(path, "administrative", 
+                                     "list_of_cities.rds"))
+    
+    invisible(file.remove(file.path(path, "administrative", filename)))
   }
   
   invisible(NULL)
