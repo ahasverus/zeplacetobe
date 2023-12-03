@@ -60,6 +60,12 @@ ui <- fluidPage(
     
     column(3,
            wellPanel(
+             htmlOutput("land_cover")
+           )
+    ),
+    
+    column(3,
+           wellPanel(
              htmlOutput("current_climate")
            )
     ),
@@ -67,12 +73,6 @@ ui <- fluidPage(
     column(3,
            wellPanel(
              htmlOutput("future_climate")
-           )
-    ),
-    
-    column(3,
-           wellPanel(
-             htmlOutput("other")
            )
     )
   )
@@ -107,6 +107,10 @@ server <- function(input, output, session) {
   
   output$elevation <- renderText({
     render_elevation(values())
+  })
+  
+  output$land_cover <- renderText({
+    render_land_cover(app_data, layer())
   })
   
   output$current_climate <- renderText({

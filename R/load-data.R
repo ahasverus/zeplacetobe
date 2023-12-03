@@ -8,6 +8,9 @@ load_data <- function(path = here::here("data")) {
   
   data_list$"cities" <- readRDS(file.path(path, "administrative",
                                           "list_of_cities.rds"))
+  
+  data_list$"landcover" <- read.csv2(file.path(path, "land-cover",
+                                               "clc_etat_com_n1.csv"))
 
   data_list$"elevation" <- terra::rast(file.path(path, "elevation", 
                                                  "FRA_elv_msk.tif"))

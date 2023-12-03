@@ -3,7 +3,7 @@ render_elevation <- function(data) {
   if (length(data) == 0) {
     data <- rep("___", 3)
   } else {
-    data <- paste0(data, "m")
+    data <- paste0(data, " m")
   }
 
   html <- NULL

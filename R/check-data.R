@@ -21,6 +21,11 @@ check_data <- function() {
   get_administrative_layers(path_data)
   
   
+  ## Download Corine Land Cover ----
+  
+  get_landcover(path_data)
+  
+  
   ## Download current climate layers ----
   
   get_elevation_layer(path_data)
