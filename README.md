@@ -22,7 +22,11 @@
 
 ## Overview
 
-This repository contains the code to build and run the Shiny App **Find the best place to live in France** available at <https://ahasverus.shinyapps.io/zeplacetobe>.
+This repository contains the code to build and run the Shiny App **Find the best place to live in France** available at <https://ahasverus.shinyapps.io/zeplacetobe>. For a given French city, user can get information on administration, demography, geography, land cover, climate change, etc. A [Leaflet](https://rstudio.github.io/leaflet/) map allows user to access satellite images of the city.
+
+Currently, this app is only available for Mainland France.
+
+The next three sections explain how to run the Shiny app locally.
 
 
 ## System requirements
@@ -55,22 +59,49 @@ remotes::install_deps()
 To start and use the Shiny app, run the following command:
 
 ```r
-# Load the `shiny` package
-library("shiny")
-
 # Run the Shiny app
-runApp()
+shiny::runApp()
 ```
 
 On a web browser, go to the URL `http://127.0.0.1:XXX`, where `XXX` is the port listening the Shiny server.
 
+**Note:** running the app for the first time can take several minutes as all required datasets will be downloaded.
+
+
 
 ## Data description
 
-### Administrative borders
+#### Administrative borders
 
 - Borders of Mainland France come from the [GADM](https://gadm.org) database
 - Borders of French municipalities come from [OpenStreetMap](https://www.data.gouv.fr/fr/datasets/decoupage-administratif-communal-francais-issu-d-openstreetmap/) database
+
+
+#### Base maps
+
+- [OpenStreetMap](https://www.openstreetmap.org/copyright/) layer, released under the [ODbl](https://opendatacommons.org/licenses/odbl/) license
+- [Esri WorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9) layer
+
+
+#### Administration, demography and geography
+
+- Data come from [Wikipedia](https://wikipedia.org/)
+
+
+#### Elevation
+
+- Data come from [SRTM 90m](https://csidotinfo.wordpress.com/data/srtm-90m-digital-elevation-database-v4-1/) Digital Elevation Model and have been downloaded with the R package [`geodata`](https://cran.r-project.org/package=geodata)
+
+
+#### Land cover
+
+- Data come from the [Corine Land cover](https://www.statistiques.developpement-durable.gouv.fr/corine-land-cover-0?rubrique=348&dossier=1759) database
+
+
+#### Climate data
+
+- Climate layers for the period 1981-2010 come from the [Chelsa](https://chelsa-climate.org/) database
+- Climate layers for the period 2041-2070 come from the [Chelsa](https://chelsa-climate.org/) database and the Global Climate Model [GFDL-ESM4](https://www.gfdl.noaa.gov/earth-system-esm4/) run under the SSP scenario [SSP585](https://view.es-doc.org/?renderMethod=name&project=cmip6&type=cim.2.designing.NumericalExperiment&client=esdoc-url-rewrite&name=ssp585).
 
 
 ## Citation
