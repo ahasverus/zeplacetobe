@@ -1,4 +1,4 @@
-# The Best Place to Live in France
+# Find the best place to live in France
 
 <!-- badges: start -->
 [![License: GPL (\>=
@@ -11,6 +11,7 @@
 
 <p align="left">
 • <a href="#overview">Overview</a><br>
+• <a href="#system-requirements">System requirements</a><br>
 • <a href="#installation">Installation</a><br>
 • <a href="#usage">Usage</a><br>
 • <a href="#data-description">Data description</a><br>
@@ -21,17 +22,46 @@
 
 ## Overview
 
-_ADD DESCRIPTION_
+This repository contains the code to build and run the Shiny App 
+<https://ahasverus.shinyapps.io/zeplacetobe>.
+
+
+## System requirements
+
+This project requires the software [R](https://cran.r-project.org/). Windows users need to install the additional software [RTools](https://cran.r-project.org/bin/windows/Rtools/).
+This project handles spatial objects and requires some system dependencies (GDAL, PROJ and GEOS). Please visit [this page](https://github.com/r-spatial/sf/#installing) to correctly install these tools.
 
 
 ## Installation
 
-_ADD DESCRIPTION_
+- [Fork](https://docs.github.com/en/get-started/quickstart/contributing-to-projects) this repository using the GitHub interface.
+- [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
+your fork using `git clone fork-url` (replace `fork-url` by the URL of your fork). 
+Alternatively, open RStudio IDE and create a New Project from Version Control.
+- Install required packages by running:
+
+
+```r
+# Install the `remotes` package
+install.packages("remotes")
+
+# Install required packages
+remotes::install_deps()
+```
+
 
 
 ## Usage
 
-_ADD DESCRIPTION_
+To start and use the Shiny app, run the following command:
+
+```r
+# Load the `shiny` package
+library("shiny")
+
+# Run the Shiny app
+runApp()
+```
 
 
 ## Data description

@@ -8,15 +8,13 @@ check_data()
 app_data <- load_data()
 
 
-## Start App -----
+## Create front-end interface -----
 
 ui <- fluidPage(
   
   tags$head(
     includeCSS("css/style.css")
   ),
-  
-  # titlePanel("Ze Place to Be"),
   
   fluidRow(
     column(6,
@@ -79,6 +77,8 @@ ui <- fluidPage(
 )
 
 
+## Setup back-end server -----
+
 server <- function(input, output, session) {
   
   city <- eventReactive(input$search, {
@@ -121,5 +121,8 @@ server <- function(input, output, session) {
     render_future_climate(values())
   })
 }
+
+
+## Start App -----
 
 shinyApp(ui, server)
