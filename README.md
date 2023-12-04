@@ -22,8 +22,7 @@
 
 ## Overview
 
-This repository contains the code to build and run the Shiny App 
-<https://ahasverus.shinyapps.io/zeplacetobe>.
+This repository contains the code to build and run the Shiny App **Find the best place to live in France** available at <https://ahasverus.shinyapps.io/zeplacetobe>.
 
 
 ## System requirements
@@ -63,6 +62,8 @@ library("shiny")
 runApp()
 ```
 
+On a web browser, go to the URL `http://127.0.0.1:XXX`, where `XXX` is the port listening the Shiny server.
+
 
 ## Data description
 
@@ -74,7 +75,7 @@ runApp()
 
 ## Citation
 
-_ADD DESCRIPTION_
+> Casajus N (2023) A Shiny app to find the best place to live in France. URL: <https://ahasverus.shinyapps.io/zeplacetobe/>.
 
 
 ## Contributing
