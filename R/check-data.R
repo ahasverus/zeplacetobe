@@ -36,6 +36,11 @@ check_data <- function() {
   get_earthquake(path_data)
   
   
+  ## Download Sunshine duration ----
+  
+  get_sunshine(path_data)
+  
+  
   ## Download current climate layers ----
   
   get_elevation_layer(path_data)

@@ -59,6 +59,9 @@ ui <- fluidPage(
            ),
            wellPanel(
              htmlOutput("earth_quake")
+           ),
+           wellPanel(
+             htmlOutput("sunshine")
            )
     ),
     
@@ -121,6 +124,10 @@ server <- function(input, output, session) {
   
   output$earth_quake <- renderText({
     render_earth_quake(app_data, layer())
+  })
+  
+  output$sunshine <- renderText({
+    render_sunshine(app_data, layer())
   })
   
   output$land_cover <- renderText({

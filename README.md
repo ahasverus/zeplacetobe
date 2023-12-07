@@ -73,24 +73,29 @@ On a web browser, go to the URL `http://127.0.0.1:XXX`, where `XXX` is the port 
 
 #### Administrative borders
 
-- Borders of Mainland France come from the [GADM](https://gadm.org) database
-- Borders of French municipalities come from [OpenStreetMap](https://www.data.gouv.fr/fr/datasets/decoupage-administratif-communal-francais-issu-d-openstreetmap/) database
+- Borders of Mainland France come from the [GADM](https://gadm.org) database.
+- Borders of French municipalities come from [OpenStreetMap](https://www.data.gouv.fr/fr/datasets/decoupage-administratif-communal-francais-issu-d-openstreetmap/) database.
 
 
 #### Base maps
 
-- [OpenStreetMap](https://www.openstreetmap.org/copyright/) layer, released under the [ODbl](https://opendatacommons.org/licenses/odbl/) license
-- [Esri WorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9) layer
+- [OpenStreetMap](https://www.openstreetmap.org/copyright/) layer, released under the [ODbl](https://opendatacommons.org/licenses/odbl/) license.
+- [Esri WorldImagery](https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9) layer.
 
 
 #### Administration, demography and geography
 
-- Data come from [Wikipedia](https://wikipedia.org/)
+- Data come from [Wikipedia](https://wikipedia.org/).
 
 
 #### Elevation
 
-- Data come from [SRTM 90m](https://csidotinfo.wordpress.com/data/srtm-90m-digital-elevation-database-v4-1/) Digital Elevation Model and have been downloaded with the R package [`geodata`](https://cran.r-project.org/package=geodata)
+- Data come from [SRTM 90m](https://csidotinfo.wordpress.com/data/srtm-90m-digital-elevation-database-v4-1/) Digital Elevation Model and have been downloaded with the R package [`geodata`](https://cran.r-project.org/package=geodata).
+
+
+#### Sunshine duration
+
+- Data come from [Data Gouv France](https://www.data.gouv.fr/fr/datasets/donnees-du-temps-densoleillement-par-departements-en-france/).
 
 
 #### Services
@@ -100,12 +105,12 @@ On a web browser, go to the URL `http://127.0.0.1:XXX`, where `XXX` is the port 
 
 #### Land cover
 
-- Data come from the [Corine Land cover](https://www.statistiques.developpement-durable.gouv.fr/corine-land-cover-0?rubrique=348&dossier=1759) database
+- Data come from the [Corine Land cover](https://www.statistiques.developpement-durable.gouv.fr/corine-land-cover-0?rubrique=348&dossier=1759) database.
 
 
 #### Climate data
 
-- Climate layers for the period 1981-2010 come from the [Chelsa](https://chelsa-climate.org/) database
+- Climate layers for the period 1981-2010 come from the [Chelsa](https://chelsa-climate.org/) database.
 - Climate layers for the period 2041-2070 come from the [Chelsa](https://chelsa-climate.org/) database and the Global Climate Model [GFDL-ESM4](https://www.gfdl.noaa.gov/earth-system-esm4/) run under the SSP scenario [SSP585](https://view.es-doc.org/?renderMethod=name&project=cmip6&type=cim.2.designing.NumericalExperiment&client=esdoc-url-rewrite&name=ssp585).
 
 
