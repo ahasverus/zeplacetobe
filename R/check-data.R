@@ -26,6 +26,11 @@ check_data <- function() {
   get_landcover(path_data)
   
   
+  ## Download Hospital locations ----
+  
+  get_hospitals(path_data)
+  
+  
   ## Download current climate layers ----
   
   get_elevation_layer(path_data)

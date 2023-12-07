@@ -11,6 +11,9 @@ load_data <- function(path = here::here("data")) {
   
   data_list$"landcover" <- read.csv2(file.path(path, "land-cover",
                                                "clc_etat_com_n1.csv"))
+  
+  data_list$"hospitals" <- sf::st_read(dsn = file.path(path, "services", 
+                                                       "france_hospitals.gpkg"))
 
   data_list$"elevation" <- terra::rast(file.path(path, "elevation", 
                                                  "FRA_elv_msk.tif"))

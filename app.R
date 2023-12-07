@@ -53,6 +53,9 @@ ui <- fluidPage(
     column(3,
            wellPanel(
              htmlOutput("elevation")
+           ),
+           wellPanel(
+             htmlOutput("services")
            )
     ),
     
@@ -107,6 +110,10 @@ server <- function(input, output, session) {
   
   output$elevation <- renderText({
     render_elevation(values())
+  })
+  
+  output$services <- renderText({
+    render_services(app_data, layer())
   })
   
   output$land_cover <- renderText({

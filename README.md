@@ -93,6 +93,11 @@ On a web browser, go to the URL `http://127.0.0.1:XXX`, where `XXX` is the port 
 - Data come from [SRTM 90m](https://csidotinfo.wordpress.com/data/srtm-90m-digital-elevation-database-v4-1/) Digital Elevation Model and have been downloaded with the R package [`geodata`](https://cran.r-project.org/package=geodata)
 
 
+#### Services
+
+- Data for hospitals come from the [Fédération Hospitalière de France](https://etablissements.fhf.fr/). Only the CHR (Centres Hospitaliers Régionaux), CH (Centres hospitaliers), and HL (Hôpitaux locaux) are used in the app.
+
+
 #### Land cover
 
 - Data come from the [Corine Land cover](https://www.statistiques.developpement-durable.gouv.fr/corine-land-cover-0?rubrique=348&dossier=1759) database
