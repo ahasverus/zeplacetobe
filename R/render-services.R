@@ -31,8 +31,8 @@ render_services <- function(layers, layer) {
   html <- c(html, paste0("<br />"))
   
   html <- c(html, paste0("<span class='source'>Source : <a href='", 
-                         "https://www.data.gouv.fr/fr/datasets/localisation-des-hopitaux-dans-openstreetmap/", 
-                         "'>OpenStreetMap</a></span>"))
+                         "https://etablissements.fhf.fr/", 
+                         "'>Fédération Hospitalière de France</a></span>"))
   
   HTML(paste0(html, collapse = ""))  
 }
