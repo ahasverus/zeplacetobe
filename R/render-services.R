@@ -11,13 +11,20 @@ render_services <- function(layers, layer) {
     
     dist_to_hospital <- round(as.numeric(min(dist_to_hospital)) / 1000)
     
-    if (dist_to_hospital == 0) {
+    if (dist_to_hospital > 1000) {
       
-      dist_to_hospital <- "Oui"
+      dist_to_hospital <- "___"
       
     } else {
       
-      dist_to_hospital <- paste0("à ", dist_to_hospital, " km (", city, ")") 
+      if (dist_to_hospital == 0) {
+        
+        dist_to_hospital <- "Oui"
+        
+      } else {
+        
+        dist_to_hospital <- paste0("à ", dist_to_hospital, " km (", city, ")") 
+      }
     }
   }
   

@@ -15,6 +15,9 @@ load_data <- function(path = here::here("data")) {
   data_list$"hospitals" <- sf::st_read(dsn = file.path(path, "services", 
                                                        "france_hospitals.gpkg"))
 
+  data_list$"earth_quake" <- readRDS(file.path(path, "earth-quake",
+                                               "France_zonage_sismique.rds"))
+  
   data_list$"elevation" <- terra::rast(file.path(path, "elevation", 
                                                  "FRA_elv_msk.tif"))
   
