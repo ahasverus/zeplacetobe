@@ -44,6 +44,11 @@ ui <- fluidPage(
 
         column(width = 6, ui_curclimatebox()),
         column(width = 6, ui_futclimatebox())
+      ),
+      
+      fluidRow(
+        
+        column(width = 12, ui_bottomnote()),
       )
     ),
     
@@ -67,7 +72,7 @@ server <- function(input, output, session) {
   city <- eventReactive(input$search, {
     input$city
   }, ignoreNULL = FALSE) # click on load
-  
+
   
   ## Retrieve city coordinates w/ OSM API ----
   
@@ -112,6 +117,24 @@ server <- function(input, output, session) {
     render_futclimatebox(values())
   })
   
+  
+  ## Click on map ----
+  
+  observeEvent(input$map_click, {
+    
+    click <- input$map_click
+    
+    if (!is.null(click)) {
+
+      popup_msg <- coords_to_address(c(click$lat, click$lng))
+      
+      # leafletProxy("map") %>%
+      #   clearPopups() %>%
+      #   addPopups(lng = click$lng, lat = click$lat, popup_msg)
+      
+      updateTextInput(inputId = "city", value = popup_msg)
+    }
+  })
 }
 
 

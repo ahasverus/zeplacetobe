@@ -1,6 +1,6 @@
 ui_infobox <- function () {
   
-  panel(status = "info",
+  panel(#status = "info",
         
     HTML(
       
@@ -9,7 +9,7 @@ ui_infobox <- function () {
        </p>
        
        <p>
-         La description des données et le code source sont disponible sur 
+         La description des données et le code source sont disponibles sur 
          <a href='https://github.com/ahasverus/zeplacetobe'>
            <i class='fab fa-github' role='presentation' aria-label='github icon'>
            </i>
