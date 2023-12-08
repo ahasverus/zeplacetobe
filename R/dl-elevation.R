@@ -1,4 +1,4 @@
-get_elevation_layer <- function(path) {
+dl_elevation_layer <- function(path) {
   
   dir.create(path         = file.path(path, "elevation"), 
              showWarnings = FALSE, 

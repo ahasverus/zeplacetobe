@@ -42,3 +42,42 @@ div.github p {
   font-size: 0.9em;
   text-align: right;
 }
+
+#search {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: #f9fced;
+}
+
+#search:hover {
+  background-color: #2e6da4;
+  color: #f9fced;
+}
+
+#map {
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.navbar {
+  background-color: white;
+  border: 1px solid #dddddd;
+  border-radius: 0;
+}
+
+hr {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.border-info {
+  background-color: #efefef;
+  border: 1px solid #dddddd;
+}
+
+.author {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 7px;
+}

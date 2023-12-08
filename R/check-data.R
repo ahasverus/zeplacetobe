@@ -18,40 +18,40 @@ check_data <- function() {
   
   ## Download administrative layers ----
   
-  get_administrative_layers(path_data)
+  dl_administrative_layers(path_data)
   
   
   ## Download Corine Land Cover ----
   
-  get_landcover(path_data)
+  dl_landcover(path_data)
   
   
   ## Download Hospital locations ----
   
-  get_hospitals(path_data)
+  dl_hospitals(path_data)
   
   
   ## Download Earth quake risk ----
   
-  get_earthquake(path_data)
+  dl_earthquake(path_data)
   
   
   ## Download Sunshine duration ----
   
-  get_sunshine(path_data)
+  dl_sunshine(path_data)
   
   
   ## Download current climate layers ----
   
-  get_elevation_layer(path_data)
+  dl_elevation_layer(path_data)
   
   
   ## Download current climate layers ----
   
-  get_current_climate_layers(path_data)
+  dl_current_climate_layers(path_data)
   
   
   ## Download future climate layers ----
   
-  get_future_climate_layers(path_data)
+  dl_future_climate_layers(path_data)
 }

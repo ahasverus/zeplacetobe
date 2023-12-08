@@ -1,4 +1,4 @@
-get_sunshine <- function(path) {
+dl_sunshine <- function(path) {
   
   
   dir.create(path         = file.path(path, "sunshine"), 

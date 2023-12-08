@@ -1,4 +1,5 @@
 library("shiny")
+library("shinyWidgets")
 library("leaflet")
 
 
@@ -12,75 +13,45 @@ app_data <- load_data()
 
 ui <- fluidPage(
   
-  tags$head(
-    includeCSS("css/style.css")
-  ),
+  tags$head(includeCSS("css/style.css")),
   
-  fluidRow(
-    column(6,
-           tags$h2("Ze Place to Be")
-    ),
-    column(6,
-           tags$div(class = 'github', 
-                    tags$p(tags$a(href = 'https://github.com/ahasverus/zeplacetobe', 
-                                  icon("github"))))
-    )
-  ),
+  tags$head(HTML("<title>Find the best place to live in France</title>")),
   
-  fluidRow(
-    
-    column(3, 
-           wellPanel(
-             textInput("city", "Entrez votre commune", ""),
-             actionButton("search", "Search", icon = icon("search"))
-           ),
-           
-           wellPanel(
-             htmlOutput("wikipedia")
-           )
-    ),
-    
-    column(9,
-           wellPanel(
-             tags$p(tags$b("Localisation")),
-             leafletOutput("map")
-           )
-    )
-  ),
+  navbarPage(ui_navbar()),
   
-  fluidRow(
+  sidebarLayout(
     
-    column(3,
-           wellPanel(
-             htmlOutput("elevation")
-           ),
-           wellPanel(
-             htmlOutput("services")
-           ),
-           wellPanel(
-             htmlOutput("earth_quake")
-           ),
-           wellPanel(
-             htmlOutput("sunshine")
-           )
+    sidebarPanel(width = 5, style = paste0("background-color: transparent;", 
+                                           "border-color: transparent;", 
+                                           "border-width: 0;", 
+                                           "padding: 0;"), 
+                 
+      fluidRow(
+        
+        column(width = 6, ui_searchbox()),
+        column(width = 6, ui_infobox())
+      ),
+                 
+      hr(),
+                 
+      fluidRow(
+        
+        column(width = 6, ui_adminbox()),
+        column(width = 6, ui_landbox())
+      ),
+      
+      fluidRow(
+
+        column(width = 6, ui_curclimatebox()),
+        column(width = 6, ui_futclimatebox())
+      )
     ),
     
-    column(3,
-           wellPanel(
-             htmlOutput("land_cover")
-           )
-    ),
-    
-    column(3,
-           wellPanel(
-             htmlOutput("current_climate")
-           )
-    ),
-    
-    column(3,
-           wellPanel(
-             htmlOutput("future_climate")
-           )
+    mainPanel(width = 7, 
+              
+      tags$style(type = "text/css", paste0("#map {height: calc(100vh - 80px)", 
+                                           "!important;}")),
+      leafletOutput("map")
     )
   )
 )
@@ -90,57 +61,57 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   
+  
+  ## Catch city value on click ----
+  
   city <- eventReactive(input$search, {
     input$city
-  })
+  }, ignoreNULL = FALSE) # click on load
+  
+  
+  ## Retrieve city coordinates w/ OSM API ----
   
   coords <- reactive({
     address_to_coords(city())
   })
   
+  
+  ## Select city spatial polygon ----
+  
   layer <- reactive({
     select_layer(app_data, coords())
   })
   
+  
+  ## Extract and compute values ----
+  
   values <- reactive({
-    extract_values(app_data, layer())
+    compute_values(app_data, layer())
   })
+  
+  
+  ## Update outputs ----
   
   output$map <- renderLeaflet({
-    leaflet_map(layer())
+    render_map(layer())
   })
   
-  output$wikipedia <- renderText({
-    scrap_wikipedia(layer())
+  output$adminbox <- renderText({
+    render_adminbox(values())
   })
   
-  output$elevation <- renderText({
-    render_elevation(values())
+  output$landbox <- renderText({
+    render_landbox(values())
   })
   
-  output$services <- renderText({
-    render_services(app_data, layer())
+  output$curclimatebox <- renderText({
+    render_curclimatebox(values())
   })
   
-  output$earth_quake <- renderText({
-    render_earth_quake(app_data, layer())
+  output$futclimatebox <- renderText({
+    render_futclimatebox(values())
   })
   
-  output$sunshine <- renderText({
-    render_sunshine(app_data, layer())
-  })
-  
-  output$land_cover <- renderText({
-    render_land_cover(app_data, layer())
-  })
-  
-  output$current_climate <- renderText({
-    render_current_climate(values())
-  })
-  
-  output$future_climate <- renderText({
-    render_future_climate(values())
-  })
 }
 
 

@@ -1,4 +1,4 @@
-leaflet_map <- function(layer) {
+render_map <- function(layer) {
   
   
   ## Zoom level ----

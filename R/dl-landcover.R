@@ -1,4 +1,4 @@
-get_landcover <- function(path) {
+dl_landcover <- function(path) {
   
   
   dir.create(path         = file.path(path, "land-cover"), 

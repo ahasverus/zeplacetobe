@@ -1,4 +1,4 @@
-get_earthquake <- function(path) {
+dl_earthquake <- function(path) {
   
   
   dir.create(path         = file.path(path, "earth-quake"), 

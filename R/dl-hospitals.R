@@ -1,4 +1,4 @@
-get_hospitals <- function(path) {
+dl_hospitals <- function(path) {
   
   dir.create(path         = file.path(path, "services"), 
              showWarnings = FALSE, 

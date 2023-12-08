@@ -1,4 +1,4 @@
-get_administrative_layers <- function(path) {
+dl_administrative_layers <- function(path) {
   
   
   dir.create(path         = file.path(path, "administrative"), 
@@ -55,7 +55,18 @@ get_administrative_layers <- function(path) {
                                       ".rds")))
     }
     
+    files_to_dl <- list.files(file.path(path, "administrative"), 
+                              pattern = "commune-97", 
+                              full.names = TRUE)
+    
+    invisible(lapply(files_to_dl, function(x) invisible(file.remove(x))))
+    
     cities <- as.data.frame(sf::st_drop_geometry(cities))
+    
+    pos <- grep("^97", cities$"insee")
+    if (length(pos) > 0) cities <- cities[-pos, ]
+    
+    rownames(cities) <- NULL
     
     saveRDS(cities, file = file.path(path, "administrative", 
                                      "list_of_cities.rds"))
