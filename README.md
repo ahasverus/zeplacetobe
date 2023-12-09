@@ -98,6 +98,16 @@ On a web browser, go to the URL `http://127.0.0.1:XXX`, where `XXX` is the port 
 - Data come from [Data Gouv France](https://www.data.gouv.fr/fr/datasets/donnees-du-temps-densoleillement-par-departements-en-france/).
 
 
+#### Earth quake risk
+
+- Data come from [Data Gouv France](https://www.data.gouv.fr/fr/datasets/zonage-sismique-de-la-france-1/).
+
+
+#### Water quality
+
+- Data come from [Les Agences de l'Eau](https://qualite-riviere.lesagencesdeleau.fr)
+
+
 #### Services
 
 - Data for hospitals come from the [Fédération Hospitalière de France](https://etablissements.fhf.fr/). Only the CHR (Centres Hospitaliers Régionaux), CH (Centres hospitaliers), and HL (Hôpitaux locaux) are used in the app.

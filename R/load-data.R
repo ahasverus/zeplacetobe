@@ -21,6 +21,9 @@ load_data <- function(path = here::here("data")) {
   data_list$"sunshine" <- readRDS(file.path(path, "sunshine",
                                             "France_sunshine.rds"))
   
+  data_list$"water" <- readRDS(file.path(path, "water-quality",
+                                         "water_quality.rds"))
+  
   data_list$"elevation" <- terra::rast(file.path(path, "elevation", 
                                                  "FRA_elv_msk.tif"))
   

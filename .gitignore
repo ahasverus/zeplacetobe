@@ -22,3 +22,5 @@ inst/doc
 data/
 .Rbuildignore
 rsconnect/
+
+!data/water-quality/water_quality.rds

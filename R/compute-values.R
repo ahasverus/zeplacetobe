@@ -212,6 +212,28 @@ compute_values <- function(layers, layer) {
     
     data$"hospital" <- "___"
   }
- 
+  
+  if ("wikipedia" %in% colnames(layer)) {
+    
+    ## Water quality ----
+    
+    code_insee <- as.character(sf::st_drop_geometry(layer[1, "insee"]))
+    
+    water <- layers$"water"[layers$"water"$"insee" == code_insee, "water"]
+    
+    if (is.na(water)) {
+      
+      data$"water" <- "___"
+      
+    } else {
+      
+      data$"water" <- water
+    }
+  
+  } else {
+    
+    data$"water" <- "___"
+  }
+  
   data
 }
