@@ -31,11 +31,14 @@ select_layer <- function(layer, point) {
       inter <- sf::st_intersects(city_sf, point_sf)
       inter <- which(unlist(lapply(inter, function(x) length(x))) == 1)
       city_sf <- city_sf[inter, ]
+      
+      if (nrow(city_sf) == 0) {
+        city_sf <- layer$"france"
+      }
     }
     
   } else {
     
-    # point <- sf::st_coordinates(sf::st_centroid(layer$"france"))
     city_sf <- layer$"france"
   }
   

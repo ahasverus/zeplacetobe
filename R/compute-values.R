@@ -213,6 +213,124 @@ compute_values <- function(layers, layer) {
     data$"hospital" <- "___"
   }
   
+  
+  if ("wikipedia" %in% colnames(layer)) {
+    
+    ## Maternelles ----
+    
+    maternelles <- layers$"schools"[!is.na(layers$"schools"$ecole_maternelle), ]
+    dist_to_mat <- sf::st_distance(maternelles, layer)
+    
+    city <- maternelles[which(dist_to_mat == min(dist_to_mat, na.rm = TRUE)), ]
+    
+    code <- as.character(sf::st_drop_geometry(city[1, "code_commune"]))
+    city <- layers$cities[which(layers$cities$insee == code), "nom"]
+    
+    dist_to_mat <- round(as.numeric(min(dist_to_mat, na.rm = TRUE)) / 1000)
+    
+    if (dist_to_mat == 0) {
+      
+      data$"maternelle" <- "Oui"
+      
+    } else {
+      
+      data$"maternelle" <- paste0("à ", dist_to_mat, " km (", city, ")") 
+    }
+    
+  } else {
+    
+    data$"maternelle" <- "___"
+  }
+  
+  
+  if ("wikipedia" %in% colnames(layer)) {
+    
+    ## Elementaires ----
+    
+    elementaires <- layers$"schools"[!is.na(layers$"schools"$ecole_elementaire), ]
+    dist_to_mat <- sf::st_distance(elementaires, layer)
+    
+    city <- elementaires[which(dist_to_mat == min(dist_to_mat, na.rm = TRUE)), ]
+    
+    code <- as.character(sf::st_drop_geometry(city[1, "code_commune"]))
+    city <- layers$cities[which(layers$cities$insee == code), "nom"]
+    
+    dist_to_mat <- round(as.numeric(min(dist_to_mat, na.rm = TRUE)) / 1000)
+    
+    if (dist_to_mat == 0) {
+      
+      data$"elementaire" <- "Oui"
+      
+    } else {
+      
+      data$"elementaire" <- paste0("à ", dist_to_mat, " km (", city, ")") 
+    }
+    
+  } else {
+    
+    data$"elementaire" <- "___"
+  }
+  
+  
+  if ("wikipedia" %in% colnames(layer)) {
+    
+    ## Colleges ----
+    
+    colleges <- layers$"schools"[!is.na(layers$"schools"$college), ]
+    dist_to_mat <- sf::st_distance(colleges, layer)
+    
+    city <- colleges[which(dist_to_mat == min(dist_to_mat, na.rm = TRUE)), ]
+    
+    code <- as.character(sf::st_drop_geometry(city[1, "code_commune"]))
+    city <- layers$cities[which(layers$cities$insee == code), "nom"]
+    
+    dist_to_mat <- round(as.numeric(min(dist_to_mat, na.rm = TRUE)) / 1000)
+    
+    if (dist_to_mat == 0) {
+      
+      data$"college" <- "Oui"
+      
+    } else {
+      
+      data$"college" <- paste0("à ", dist_to_mat, " km (", city, ")") 
+    }
+    
+  } else {
+    
+    data$"college" <- "___"
+  }
+  
+  
+  if ("wikipedia" %in% colnames(layer)) {
+    
+    ## Lycees ----
+    
+    lycees <- layers$"schools"[!is.na(layers$"schools"$lycee), ]
+    dist_to_mat <- sf::st_distance(lycees, layer)
+    
+    city <- lycees[which(dist_to_mat == min(dist_to_mat, na.rm = TRUE)), ]
+    
+    code <- as.character(sf::st_drop_geometry(city[1, "code_commune"]))
+    city <- layers$cities[which(layers$cities$insee == code), "nom"]
+    
+    dist_to_mat <- round(as.numeric(min(dist_to_mat, na.rm = TRUE)) / 1000)
+    
+    if (dist_to_mat == 0) {
+      
+      data$"lycee" <- "Oui"
+      
+    } else {
+      
+      data$"lycee" <- paste0("à ", dist_to_mat, " km (", city, ")") 
+    }
+    
+  } else {
+    
+    data$"lycee" <- "___"
+  }
+  
+  
+  
   if ("wikipedia" %in% colnames(layer)) {
     
     ## Water quality ----

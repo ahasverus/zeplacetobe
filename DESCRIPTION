@@ -26,5 +26,6 @@ Imports:
     remotes,
     sf,
     shiny,
+    shinyWidgets,
     terra,
     utils

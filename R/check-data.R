@@ -31,6 +31,11 @@ check_data <- function() {
   dl_hospitals(path_data)
   
   
+  ## Download Schools locations ----
+  
+  dl_schools(path_data)
+  
+  
   ## Download Earth quake risk ----
   
   dl_earthquake(path_data)

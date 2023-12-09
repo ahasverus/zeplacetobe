@@ -12,8 +12,23 @@ render_landbox <- function(data) {
   
   html <- c(html, 
             paste0("<p class='wiki-label'>", 
-                   "Ecole", " : ",
-                   "___", "</p>"))
+                   "Ecole maternelle", " : ",
+                   data$"maternelle", "</p>"))
+  
+  html <- c(html, 
+            paste0("<p class='wiki-label'>", 
+                   "Ecole élémentaire", " : ",
+                   data$"elementaire", "</p>"))
+  
+  html <- c(html, 
+            paste0("<p class='wiki-label'>", 
+                   "Collège", " : ",
+                   data$"college", "</p>"))
+  
+  html <- c(html, 
+            paste0("<p class='wiki-label'>", 
+                   "Lycée", " : ",
+                   data$"lycee", "</p>"))
   
   html <- c(html, paste0("<br />"))
   

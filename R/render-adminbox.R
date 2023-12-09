@@ -42,6 +42,11 @@ render_adminbox <- function(data) {
   
   html <- c(html, 
             paste0("<p class='wiki-label'>", 
+                   data$"wikipedia"[6, "label"], " : ",
+                   data$"wikipedia"[6, "value"], "</p>"))
+  
+  html <- c(html, 
+            paste0("<p class='wiki-label'>", 
                    "Altitude", " : ",
                    data$"elevation"["mean"], "</p>"))
   
@@ -54,6 +59,9 @@ render_adminbox <- function(data) {
             paste0("<p class='wiki-label'>", 
                    "Qualité des eaux", " : ",
                    data$"water", "</p>"))
+  
+  html <- c(html, paste0("<br />"))
+  html <- c(html, paste0("<br />"))
   
   HTML(paste0(html, collapse = ""))
 }

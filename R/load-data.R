@@ -14,6 +14,9 @@ load_data <- function(path = here::here("data")) {
   
   data_list$"hospitals" <- sf::st_read(dsn = file.path(path, "services", 
                                                        "france_hospitals.gpkg"))
+  
+  data_list$"schools" <- sf::st_read(dsn = file.path(path, "services", 
+                                                     "fr-en-annuaire-education.geojson"))
 
   data_list$"earth_quake" <- readRDS(file.path(path, "earth-quake",
                                                "France_zonage_sismique.rds"))
